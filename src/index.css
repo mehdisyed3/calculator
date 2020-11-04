@@ -1,12 +1,24 @@
 
-.App{
-  background-color: rgb(51,51,51);
+.app{
+  display: flex;
+
 }
 
-.main{
-  margin: 100px;
-  display: inline-block;
-  border:2px solid red;
-  height: 60vh;
-  width: 30vw
+.button{
+  display: flex;
+  height: 4em;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: rgb(216, 210, 202);
+  color: grey;
+  outline: 1px solid grey;
+  flex: 1;
+}
+
+.notNumber{
+  background-color: orange;
+  color: white;
+
 }

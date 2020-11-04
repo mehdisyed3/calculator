@@ -1,15 +1,16 @@
-
-import './App.css';
+import React from 'react'
+import Button from './Button'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <header>
           Calculator
       </header>
-      <div className='main'>
-
+      <div className='calculator'>
+      <Button  />
       </div>
+    
     </div>
   );
 }
