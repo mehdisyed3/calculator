@@ -1,14 +1,10 @@
 import React from 'react'
 
-function Button(){
-
- 
-
-
+function Button({val, click}){
 
   return(
     <div >
-      {/* <button className={item === isNaN ? 'button' : 'button notNumber'}>{item}</button> */}
+      <button onClick={()=>click(val === 'x' ? '*' : val)} className={typeof val === 'number' ? 'button' : 'button notNumber'}>{val}</button>
     </div>
     
   )
