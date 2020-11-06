@@ -6,6 +6,7 @@ function App() {
   const [input,setInput]= useState('')
   const [keys,setKeys]=useState([])
 
+
   function enterEl(v){
     console.log(v)
     setKeys([...keys,v])
@@ -14,10 +15,15 @@ function App() {
 
     if(v !== '=' && keys[keys.length - 1] !== '=' ){
       setInput(input + v)}
-    else if(keys[keys.length - 1] === '='){
+    
+    if(keys[keys.length - 1] === '='){
       setInput(v)
       setKeys([])
       
+    }
+    if (  keys[keys.length-2] === '=' && keys[keys.length-1] === '='){ //to avoid error when '=' pressed too many times
+      setInput(input)
+      keys.pop()
     }
     else if(v === '='){
       setKeys([...keys,v])
@@ -28,6 +34,7 @@ function App() {
   function calculate(){
     const final = math.evaluate(input)
     setInput(final)
+
   }
  
   return (
