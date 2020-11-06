@@ -4,12 +4,23 @@ import  * as math from 'mathjs'
 
 function App() {
   const [input,setInput]= useState('')
+  const [keys,setKeys]=useState([])
 
   function enterEl(v){
-    // enter a conditon which will clear the input screen if a val is entered
-    if(v !== '='){
+    console.log(v)
+    setKeys([...keys,v])
+   
+    // pressing '='  runs the calculate function, whenever a new val was pressed after '="  the setInput(input + v) function would automatically add the value to the result shown on the input. hence, i added a keys array in the state so that the if the last item in array is an equal sign, the next val will be a fresh val and will not automatically add nums. 
+
+    if(v !== '=' && keys[keys.length - 1] !== '=' ){
       setInput(input + v)}
-    else{
+    else if(keys[keys.length - 1] === '='){
+      setInput(v)
+      setKeys([])
+      
+    }
+    else if(v === '='){
+      setKeys([...keys,v])
       calculate()
     }
   }

@@ -17,6 +17,7 @@
   height: 4em;
   display: flex;
   justify-content: flex-end;
+  text-align: end;
   align-items: center;
   width: 83%;
   font-weight: bold;
